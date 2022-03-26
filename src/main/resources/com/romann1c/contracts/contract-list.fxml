@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.romann1c.contracts.ContractListController">
+    <children>
+        <TableView fx:id="contractTable" layoutX="20.0" layoutY="20.0" prefHeight="580.0" prefWidth="1240.0">
+            <columns>
+                <TableColumn fx:id="contractNumber" prefWidth="70.0" text="Номер №" />
+                <TableColumn fx:id="contractName" prefWidth="819.0" text="Название" />
+                <TableColumn fx:id="contractDateOfUpdate" prefWidth="135.0" text="Дата обновления" />
+                <TableColumn fx:id="contractDateOfSign" prefWidth="135.0" text="Дата заключения" />
+                <TableColumn fx:id="contractValid" prefWidth="79.0" text="Актуален" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

@@ -23,9 +23,7 @@ public class ContractListMain extends Application {
         stage.setTitle("Договоры");
         stage.setScene(scene);
         stage.show();
-        List<Contract> contractList = new ArrayList<>();
-        DataBaseManager manager = new DataBaseManager(new ConnectionFactory());
-        contractList = manager.getAllContracts();
+
     }
 
     public static void main(String[] args) {

@@ -33,7 +33,7 @@ public class ConnectionFactory {
         try {
             if (!(postgresConnection == null) || !postgresConnection.isClosed()) postgresConnection.close();
         } catch (SQLException e) {
-            System.out.println("already closed or haven't been open");
+            System.out.println(e);
         }
     }
 }

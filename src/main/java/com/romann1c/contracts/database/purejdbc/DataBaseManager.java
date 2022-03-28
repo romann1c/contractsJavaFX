@@ -33,12 +33,11 @@ public class DataBaseManager {
                     getConnection().
                     prepareStatement("insert into contracts.contracts (number, contractname, dateofsign, dateofupdate) values (?, ?, ?, ?);");
             preparedStatement.setInt(1, contract.getNumber());
-            preparedStatement.setString(2, "sdfsdf"); // -> 'sdfsdf'
+            preparedStatement.setString(2, contract.getName()); //
             preparedStatement.setDate(3, contract.getDateOfSign());
             preparedStatement.setDate(4,contract.getDateOfUpdate());
             System.out.println(preparedStatement.toString());
             int rows = preparedStatement.executeUpdate();
-            System.out.println("Rows added: " + rows);
             connectionFactory.getConnection().close();
         } catch (SQLException e) {
             System.out.println("Exception while saving " + e);

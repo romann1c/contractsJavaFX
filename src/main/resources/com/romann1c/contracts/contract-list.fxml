@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.romann1c.contracts.ContractListController">
@@ -15,5 +17,10 @@
                 <TableColumn fx:id="contractValid" prefWidth="79.0" text="Актуален" />
             </columns>
         </TableView>
+      <TextField fx:id="number" layoutX="200.0" layoutY="656.0" promptText="number" />
+      <TextField fx:id="nameOfContract" layoutX="400.0" layoutY="656.0" promptText="name" />
+      <TextField fx:id="dateOfSignOfContract" layoutX="600.0" layoutY="656.0" promptText="date of sign" />
+      <TextField fx:id="dateOfUpdateOfContract" layoutX="800.0" layoutY="656.0" promptText="date of update" />
+      <Button fx:id="registration" layoutX="1000.0" layoutY="652.0" mnemonicParsing="false" text="add" />
     </children>
 </AnchorPane>

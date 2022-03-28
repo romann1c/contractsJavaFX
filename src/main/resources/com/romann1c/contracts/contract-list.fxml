@@ -17,7 +17,7 @@
                 <TableColumn fx:id="contractValid" prefWidth="79.0" text="Актуален" />
             </columns>
         </TableView>
-      <TextField fx:id="number" layoutX="200.0" layoutY="656.0" promptText="number" />
+      <TextField fx:id="numberOfContract" layoutX="200.0" layoutY="656.0" promptText="number" />
       <TextField fx:id="nameOfContract" layoutX="400.0" layoutY="656.0" promptText="name" />
       <TextField fx:id="dateOfSignOfContract" layoutX="600.0" layoutY="656.0" promptText="date of sign" />
       <TextField fx:id="dateOfUpdateOfContract" layoutX="800.0" layoutY="656.0" promptText="date of update" />

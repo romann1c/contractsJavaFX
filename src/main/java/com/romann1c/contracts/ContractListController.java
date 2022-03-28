@@ -42,7 +42,7 @@ public class ContractListController {
     private TableColumn<Contract, Boolean> contractValid;
 
     @FXML
-    private TextField number;
+    private TextField numberOfContract;
 
     @FXML
     private TextField nameOfContract;
@@ -61,40 +61,26 @@ public class ContractListController {
     @FXML
     private void initialize() {
 
+        //перезапускаем метод при нажатии кнопки.
         registration.setOnAction(event -> {
             initialize();
         });
 
-        String numberStr = number.getText();
-        numberStr.replaceAll("\\D", "");
-        Integer number = null;
-        if (numberStr.length() > 0) {
-            number = Integer.parseInt(numberStr);
-        }
-
-        String dateOfSign = dateOfSignOfContract.getText();
-
-        String dateOfUpdate = dateOfSign;
-
-        String dateOfUpdateTemp = dateOfUpdateOfContract.getText();
-
-        if (dateOfUpdateTemp.length() > 0) {dateOfUpdate = dateOfUpdateTemp;}
-
+        //Считываем строку из приложения, переводим её в число.
+        Integer number = this.strToNum(numberOfContract.getText());
+        //Получаем название договора.
         String name = nameOfContract.getText();
-
-        if (!(number == null)) {
-            try {
-                Contract contractAdd = new Contract(number, name, dateOfSign, dateOfUpdate);
-                manager.saveContract(contractAdd);
-            } catch (Exception e) {
-                System.out.println(e + " while saving");
-            }
-        }
-
+        //Получаем дату заключения.
+        String dateOfSign = dateOfSignOfContract.getText();
+        //Получаем дату внесения изменений, либо присваиваем значение даты заключения.
+        String dateOfUpdate = getDateOfUpdate(dateOfSign, dateOfUpdateOfContract.getText());
+        //Создаем объект и добавляем в БД.
+        createAndAddContract(number, name, dateOfSign, dateOfUpdate);
 
         contractObservableList.clear();
 
         List<Contract> contractList = manager.getAllContracts();
+
         contractObservableList.addAll(contractList);
 
         contractNumber.setCellValueFactory(new PropertyValueFactory<Contract, Integer>("number"));
@@ -106,6 +92,30 @@ public class ContractListController {
         contractTable.setItems(contractObservableList);
     }
 
+    private Integer strToNum(String inputNum){
+        inputNum.replaceAll("\\D", "");
+        Integer number = null;
+        if (inputNum.length() > 0) {
+            number = Integer.parseInt(inputNum);
+        }
+        return number;
+    }
 
+    private void createAndAddContract(Integer number, String name, String dateOfSign, String dateOfUpdate){
+        if (!(number == null)) {
+            try {
+                Contract contractAdd = new Contract(number, name, dateOfSign, dateOfUpdate);
+                manager.saveContract(contractAdd);
+            } catch (Exception e) {
+                System.out.println(e + " while saving");
+            }
+        }
+    }
+
+    private String getDateOfUpdate(String dateOfSign, String dateOfUpdateTemp){
+        String dateOfUpdate = dateOfSign;
+        if (dateOfUpdateTemp.length() > 0) dateOfUpdate = dateOfUpdateTemp;
+        return dateOfUpdate;
+    }
 }
 

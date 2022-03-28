@@ -6,5 +6,5 @@ module com.romann1c.contracts {
 
     opens com.romann1c.contracts to javafx.fxml;
     exports com.romann1c.contracts;
-    exports com.romann1c.contracts.database.purejdbc;
+    exports com.romann1c.contracts.database;
 }

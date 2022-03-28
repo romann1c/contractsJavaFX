@@ -1,4 +1,4 @@
-package com.romann1c.contracts.database.purejdbc;
+package com.romann1c.contracts.database;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

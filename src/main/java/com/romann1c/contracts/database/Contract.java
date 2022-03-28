@@ -1,4 +1,4 @@
-package com.romann1c.contracts.database.purejdbc;
+package com.romann1c.contracts.database;
 
 import java.sql.Date;
 import java.util.Calendar;

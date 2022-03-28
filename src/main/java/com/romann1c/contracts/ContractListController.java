@@ -1,8 +1,8 @@
 package com.romann1c.contracts;
 
-import com.romann1c.contracts.database.purejdbc.ConnectionFactory;
-import com.romann1c.contracts.database.purejdbc.Contract;
-import com.romann1c.contracts.database.purejdbc.DataBaseManager;
+import com.romann1c.contracts.database.ConnectionFactory;
+import com.romann1c.contracts.database.Contract;
+import com.romann1c.contracts.database.DataBaseManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ContractListController {

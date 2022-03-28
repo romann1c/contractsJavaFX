@@ -1,16 +1,11 @@
 package com.romann1c.contracts;
 
-import com.romann1c.contracts.database.purejdbc.ConnectionFactory;
-import com.romann1c.contracts.database.purejdbc.Contract;
-import com.romann1c.contracts.database.purejdbc.DataBaseManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ContractListMain extends Application {
 

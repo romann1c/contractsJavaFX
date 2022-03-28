@@ -77,7 +77,7 @@ public class ContractListController {
         String dateOfUpdate = dateOfSign;
 
         String dateOfUpdateTemp = dateOfUpdateOfContract.getText();
-        ;
+
         if (dateOfUpdateTemp.length() > 0) {dateOfUpdate = dateOfUpdateTemp;}
 
         String name = nameOfContract.getText();
